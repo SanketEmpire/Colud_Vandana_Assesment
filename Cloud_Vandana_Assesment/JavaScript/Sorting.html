@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descending Sort</title>
+</head>
+<body>
+    <h1>Sort an Array in Descending Order</h1>
+    <form>
+        <label for="arrayInput">Enter array elements (comma-separated):</label>
+        <input type="text" id="arrayInput">
+        <button type="button" onclick="sortDescending()">Sort Descending</button>
+    </form>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        function sortDescending() {
+            const arrayInput = document.getElementById("arrayInput").value;
+         // Split and convert to numbers
+            const array = arrayInput.split(',').map(Number); 
+            array.sort(function(a, b) {
+            	// Compare in descending order
+                return b - a; 
+            });
+            document.getElementById("result").textContent = array.join(', ');
+        }
+    </script>
+</body>
+</html>
